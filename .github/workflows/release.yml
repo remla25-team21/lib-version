@@ -31,6 +31,6 @@ jobs:
       with:
         files: dist/*
         generate_release_notes: true
-        tag_name: '${{ github.ref }}'  # Specify the tag name for the release
+        tag_name: '${{ github.ref_name }}'  # Specify the tag name for the release
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
