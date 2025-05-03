@@ -13,11 +13,11 @@ A version-aware Python library that provides version information. This library c
 You can install the library directly from GitHub:
 
 ```bash
-pip install git+https://github.com/remla25-team21/lib-version.git@v0.1.0
+pip install git+https://github.com/remla25-team21/lib-version.git@v0.4.0
 ```
 
 > [!NOTE]
-> Replace `v0.1.0` with the specific version tag you want to use, or omit `@v0.1.0` to install the latest version from the main branch.
+> Replace `v0.4.0` with the specific version tag you want to use, or omit `@v0.4.0` to install the latest version from the main branch.
 
 ## Usage
 
