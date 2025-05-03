@@ -35,8 +35,15 @@ class VersionUtil:
         import subprocess
         
         try:
-            # Get the directory of the current file
-            current_dir = Path(__file__).parent.parent.parent.absolute()
+            # Dynamically determine the root directory of the Git repository
+            try:
+                current_dir = Path(subprocess.check_output(
+                    ["git", "rev-parse", "--show-toplevel"],
+                    stderr=subprocess.DEVNULL
+                ).decode().strip())
+            except subprocess.SubprocessError:
+                # Fallback to the current file's directory if Git command fails
+                current_dir = Path(__file__).parent.parent.parent.absolute()
             
             # Try to get the git version
             git_command = ["git", "-C", str(current_dir), "describe", "--tags", "--abbrev=0"]
